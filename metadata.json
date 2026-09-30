@@ -1,0 +1,6 @@
+{
+  "name": "Drishti — Eyes for the Blind",
+  "description": "Accessibility-first AI visual assistant and danger guardian for visually impaired users. Point camera, tap to see, voice interaction, Indian currency recognition, and instant hazard alerts in 10 Indic languages.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

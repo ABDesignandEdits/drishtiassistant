@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="aurora" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#64D2FF" />
+      <stop offset="45%" stop-color="#0A84FF" />
+      <stop offset="85%" stop-color="#5E5CE6" />
+      <stop offset="100%" stop-color="#05070F" />
+    </radialGradient>
+    <linearGradient id="specular" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8" />
+      <stop offset="40%" stop-color="#64D2FF" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.6" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="#05070F" />
+  <circle cx="256" cy="256" r="210" fill="url(#aurora)" opacity="0.3" filter="blur(20px)" />
+  <circle cx="256" cy="256" r="170" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="4" />
+  <circle cx="256" cy="256" r="130" fill="none" stroke="#64D2FF" stroke-width="6" stroke-dasharray="16 12" />
+  <!-- Eye pupil & iris representing Drishti (Vision) -->
+  <path d="M96 256 C150 160, 362 160, 416 256 C362 352, 150 352, 96 256 Z" fill="rgba(11, 18, 36, 0.85)" stroke="#64D2FF" stroke-width="8" stroke-linejoin="round" />
+  <circle cx="256" cy="256" r="64" fill="#0A84FF" />
+  <circle cx="256" cy="256" r="34" fill="#05070F" />
+  <circle cx="242" cy="242" r="14" fill="#FFFFFF" />
+  <!-- Devanagari 'दृ' flourish hint -->
+  <path d="M220 180 Q256 160 292 180" stroke="#FFB340" stroke-width="5" stroke-linecap="round" fill="none" />
+</svg>

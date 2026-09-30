@@ -1,0 +1,201 @@
+/**
+ * DRISHTI — Liquid Glass Noir Surfaces and Effects
+ */
+
+.glass-surface {
+  background: var(--glass-fill);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  box-shadow: var(--glass-shadow),
+              inset 0 1px 0 var(--glass-highlight),
+              inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-surface::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.glass-surface-strong {
+  background: var(--glass-fill-strong);
+  backdrop-filter: blur(12px) saturate(170%);
+  -webkit-backdrop-filter: blur(12px) saturate(170%);
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+  box-shadow: var(--glass-shadow),
+              inset 0 1px 0 var(--glass-highlight);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Diagonal Stripe Pattern for Danger/Hazard Alert (Colorblind-Safe) */
+.danger-stripes {
+  background-color: var(--danger-fill);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(5, 7, 15, 0.25),
+    rgba(5, 7, 15, 0.25) 16px,
+    transparent 16px,
+    transparent 32px
+  );
+  color: var(--danger-text);
+}
+
+/* Pulsing perimeter border for Danger Alert */
+@keyframes danger-border-pulse {
+  0%, 100% {
+    box-shadow: inset 0 0 0 8px #FF9F0A, 0 0 40px rgba(255, 159, 10, 0.8);
+  }
+  50% {
+    box-shadow: inset 0 0 0 16px #FF9F0A, 0 0 80px rgba(255, 159, 10, 1);
+  }
+}
+
+.danger-active-pulse {
+  animation: danger-border-pulse 0.5s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .danger-active-pulse {
+    animation: none;
+    box-shadow: inset 0 0 0 12px #FF9F0A;
+  }
+}
+
+/* Aurora Background Ambient Blobs */
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 10%, var(--bg-mid) 0%, var(--bg-deep) 100%);
+}
+
+.aurora-blob {
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  will-change: transform;
+}
+
+.aurora-blob-1 {
+  top: -10vmax;
+  left: -10vmax;
+  background: var(--aurora-blue);
+  animation: drift-1 34s ease-in-out infinite alternate;
+}
+
+.aurora-blob-2 {
+  bottom: -15vmax;
+  right: -10vmax;
+  background: var(--aurora-indigo);
+  animation: drift-2 40s ease-in-out infinite alternate;
+}
+
+.aurora-blob-3 {
+  top: 40%;
+  left: 25%;
+  width: 45vmax;
+  height: 45vmax;
+  background: var(--aurora-cyan);
+  opacity: 0.25;
+  animation: drift-3 36s ease-in-out infinite alternate;
+}
+
+@keyframes drift-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15vw, 15vh) scale(1.15); }
+  100% { transform: translate(-5vw, 10vh) scale(0.95); }
+}
+
+@keyframes drift-2 {
+  0% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(-15vw, -10vh) scale(0.9); }
+  100% { transform: translate(8vw, -18vh) scale(1.05); }
+}
+
+@keyframes drift-3 {
+  0% { transform: translate(0, 0) scale(0.9); }
+  50% { transform: translate(-10vw, 12vh) scale(1.1); }
+  100% { transform: translate(12vw, -8vh) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob {
+    animation: none !important;
+  }
+}
+
+/* Glass Ripple Orb for Listening */
+.glass-orb {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(100, 210, 255, 0.45), rgba(10, 132, 255, 0.2) 60%, rgba(5, 7, 15, 0.8) 100%);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 50px rgba(100, 210, 255, 0.35), inset 0 2px 8px rgba(255, 255, 255, 0.6);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ripple-ring {
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  border: 2px solid rgba(100, 210, 255, 0.4);
+  animation: pulse-ring 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+.ripple-ring:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.ripple-ring:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Scanning shimmer line */
+@keyframes scan-sweep {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.scan-shimmer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #64D2FF, transparent);
+  box-shadow: 0 0 20px #64D2FF;
+  animation: scan-sweep 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scan-shimmer {
+    animation: none;
+    display: none;
+  }
+}

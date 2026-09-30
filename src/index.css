@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+@import "./styles/glass.css";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+}
+
+/* Ensure minimum touch target size 48px+ / 88px for emergency */
+button, [role="button"], a {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+:focus-visible {
+  outline: 4px solid var(--focus-ring);
+  outline-offset: 3px;
+}

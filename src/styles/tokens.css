@@ -1,0 +1,86 @@
+/**
+ * DRISHTI — Liquid Glass Noir Design Tokens
+ * Spec: Apple visionOS / iOS-26 inspired.
+ * High contrast, Color-blind safe (Blue/Cyan/Amber/Indigo only. NO Red/Green ambiguity).
+ */
+
+:root {
+  /* Dark Glass Noir (Default) */
+  --bg-deep: #05070F;
+  --bg-mid: #0B1224;
+  --aurora-blue: #0A84FF;
+  --aurora-cyan: #64D2FF;
+  --aurora-indigo: #5E5CE6;
+  --aurora-amber: #FFB340;
+  
+  --glass-fill: rgba(11, 18, 36, 0.28);
+  --glass-fill-strong: rgba(11, 18, 36, 0.40);
+  --glass-border: rgba(255, 255, 255, 0.25);
+  --glass-highlight: rgba(255, 255, 255, 0.45);
+  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #C7D2E8;
+  --text-info: #64D2FF;
+
+  --action-fill: #64D2FF;
+  --action-text: #05070F;
+
+  --warning-fill: #FFB340;
+  --warning-text: #05070F;
+
+  /* Danger: Amber-Orange #FF9F0A (high visibility, colorblind-safe) with diagonal stripes */
+  --danger-fill: #FF9F0A;
+  --danger-text: #05070F;
+
+  --focus-ring: #FFFFFF;
+
+  /* Typography scale */
+  --font-display: 'Inter', 'Noto Sans Devanagari', -apple-system, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+}
+
+/* High-Contrast Light Theme */
+[data-theme="high-contrast-light"] {
+  --bg-deep: #F5F7FB;
+  --bg-mid: #E8EEF8;
+  --aurora-blue: #0A3D91;
+  --aurora-cyan: #025091;
+  --aurora-indigo: #2D27A0;
+  --aurora-amber: #B35800;
+
+  --glass-fill: rgba(255, 255, 255, 0.94);
+  --glass-fill-strong: rgba(255, 255, 255, 0.98);
+  --glass-border: #05070F;
+  --glass-highlight: rgba(5, 7, 15, 0.35);
+  --glass-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+  --text-primary: #05070F;
+  --text-secondary: #1F2839;
+  --text-info: #0A3D91;
+
+  --action-fill: #0A3D91;
+  --action-text: #FFFFFF;
+
+  --warning-fill: #B35800;
+  --warning-text: #FFFFFF;
+
+  --danger-fill: #994700;
+  --danger-text: #FFFFFF;
+
+  --focus-ring: #05070F;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-fill: rgba(11, 18, 36, 0.96);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --glass-fill: #0B1224;
+    --glass-fill-strong: #111A34;
+  }
+}

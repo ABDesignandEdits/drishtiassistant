@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <radialGradient id="aurora192" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#64D2FF" />
+      <stop offset="60%" stop-color="#0A84FF" />
+      <stop offset="100%" stop-color="#05070F" />
+    </radialGradient>
+  </defs>
+  <rect width="192" height="192" rx="48" fill="#05070F" />
+  <circle cx="96" cy="96" r="75" fill="url(#aurora192)" opacity="0.35" />
+  <path d="M36 96 C56 60, 136 60, 156 96 C136 132, 56 132, 36 96 Z" fill="rgba(11, 18, 36, 0.85)" stroke="#64D2FF" stroke-width="4" stroke-linejoin="round" />
+  <circle cx="96" cy="96" r="24" fill="#0A84FF" />
+  <circle cx="96" cy="96" r="12" fill="#05070F" />
+  <circle cx="91" cy="91" r="5" fill="#FFFFFF" />
+</svg>
